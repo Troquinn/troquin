@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+/* Definindo as variáveis de cores */
+:root {
+  /* Cores Padronizadas */
+  --cor-padrao-offwhite: #F0F0EC;
+  --cor-padrao-verde-azulado: #00AC98;
+  --cor-padrao-verde-escuro: #007F70;
+
+  /* Cores Secundárias */
+  --cor-secundaria-cinza-verde: #779C91;
+  --cor-secundaria-rosa: #FF81A7;
+  --cor-secundaria-azul: #071DAD;
+  --cor-secundaria-amarelo: #E1A500;
+
+  /* Cores para Texto (ajustar conforme o contraste com os fundos) */
+  --cor-texto-para-destaque-em-animacao: #2B2B2B; /* Usar em fundos claros */
+  --cor-texto-claro: #F0F0EC; /* Usar em fundos escuros ou vibrantes */
+}
+
+
+body{
+    font-family:"Nunito", sans-serif;
+    background-color: #F0F0EC;
+}
+
+
+
+/*Cabeçalho*/
+header{
+    background-color: var(--cor-padrao-verde-escuro);
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 38px;
+    position: sticky; /* junção do fixed + static, deixando ele fixo no topo, mas com fluxo para descer para baixo */
+    top: 0; /* distancia do topo, zero distancia no caso */
+    z-index: 3; /* Hierarquia, posições, quanto maior a hierarquia maior o nivel de importancia (sobreposição) */
+}
+
+.logo{
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #F0F0EC;
+
+    &  p span img{
+        transform: translateY(2px);  /* EIXO X E EIXO Y, EIXO Z */
+        
+        
+
+        animation: rodar-moeda 1s infinite; 
+        /* perspective: 1000px; perpectiva de animação (pesquisar)*/
+
+
+    }
+}
+
+@keyframes rodar-moeda{
+    0% {transform:rotateY(180deg) translateY(2px);}
+    
+}
+
+nav{
+    display: flex; /*Alinhar os componentes de dentro,de forma centralizada na header*/
+    align-items: center; /*Alinhar os conteúdos ao centro*/
+}
+
+nav a{
+    color:aliceblue;
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    /* Transforma a lista em um container flexível para alinhar os itens horizontalmente */
+    display: flex;
+
+    /* Remove as bolinhas da lista */
+    list-style: none;
+}
+
+/* Estilos para cada item da lista */
+nav ul li {
+    /* Adiciona um espaçamento entre os links */
+    margin: 0 15px; /* Ajuste o valor para o espaço que você quiser */
+
+    text-transform: uppercase; /*Deixa todas as letras em maiusculo*/
+}
+/*Fim da formatação da header*/
