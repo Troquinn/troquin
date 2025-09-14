@@ -33,15 +33,16 @@ body{
 
 
 
+
 /*Cabeçalho*/
 header{
     background-color: var(--cor-padrao-verde-escuro);
     display: flex;
     justify-content: space-between;
     padding: 18px 38px;
-    position: sticky; /* junção do fixed + static, deixando ele fixo no topo, mas com fluxo para descer para baixo */
-    top: 0; /* distancia do topo, zero distancia no caso */
-    z-index: 3; /* Hierarquia, posições, quanto maior a hierarquia maior o nivel de importancia (sobreposição) */
+    /*position: sticky;  junção do fixed + static, deixando ele fixo no topo, mas com fluxo para descer para baixo */
+    /*top: 0; distancia do topo, zero distancia no caso */
+    z-index: 4; /* Hierarquia, posições, quanto maior a hierarquia maior o nivel de importancia (sobreposição) */
 }
 
 .logo{
@@ -95,3 +96,123 @@ nav ul li {
     text-transform: uppercase; /*Deixa todas as letras em maiusculo*/
 }
 /*Fim da formatação da header*/
+
+
+/*Sessão 1*/
+.apresentação{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: auto;
+}
+
+.container{ 
+    display: flex;
+    flex-direction: column;
+}
+
+#fundo{
+    width: 100%;
+    z-index: 1;
+}
+
+.content{
+        background-color: white;
+        border-radius:35px;
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        padding: 60px 32px;
+        padding-right: 70px;
+        position: relative;
+        box-shadow: 56px 32px 30px rgba(0,0,0, 0.25);
+        transform: rotate( -5.12deg);
+        position: absolute;
+        z-index: 2;
+        margin-top: 13%;
+        margin-left: 10%;
+
+        /*animação*/
+        animation:mover 2s infinite ease-in-out ;
+
+
+
+         & #dinheiro1 {
+            position: absolute;
+            top: -130px;
+            right: -120px;
+
+            /*Animação do dinehiro*/
+            animation: subir-e-descer 2s infinite ease-in-out;
+        }
+
+        & #dinheiro2{
+            position: absolute;
+            bottom: -140px;
+            left: -100px;
+
+            /*Animação do dinehiro*/
+            animation: subir-e-descer 2s infinite ease-in-out;
+        }
+
+        & h2{
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+           
+        }
+
+        & h2{
+            font-size: 2.25rem;
+            color: var(--cor-padrao-verde-escuro);
+
+            & span{
+             color: var(--cor-secundaria-azul);
+
+        }
+
+}
+
+/*Animação para a sessão  home/ div content*/
+@keyframes subir-e-descer{
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+    
+
+@keyframes mover {
+  0% { transform: rotate(-5.12deg) translateY(0); }
+  50% { transform: rotate(-5.12deg) translateY(-20px); }
+  100% { transform: translateY();}
+ 
+
+}
+
+
+.animacao-pessoas{
+    position: absolute;
+    display: flex;
+    margin-left: 50%;
+    margin-top: 3%;
+    z-index: 2;
+}
+
+
+
+.animacao-pessoas img {  
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;   /* aqui está a transição */
+}
+
+.animacao-pessoas img.active {
+   opacity: 1;
+
+}
+    
+
+
+
+
