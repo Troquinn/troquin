@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+/* Definindo as variáveis de cores */
+:root {
+  /* Cores Padronizadas */
+  --cor-padrao-offwhite: #f0f0ec;
+  --cor-padrao-verde-azulado: #00ac98;
+  --cor-padrao-verde-escuro: #007f70;
+
+  /* Cores Secundárias */
+  --cor-secundaria-cinza-verde: #779c91;
+  --cor-secundaria-rosa: #ff81a7;
+  --cor-secundaria-azul: #071dad;
+  --cor-secundaria-amarelo: #e1a500;
+
+  /* Cores para Texto (ajustar conforme o contraste com os fundos) */
+  --cor-texto-para-destaque-em-animacao: #2b2b2b; /* Usar em fundos claros */
+  --cor-texto-claro: #f0f0ec; /* Usar em fundos escuros ou vibrantes */
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #f0f0ec;
+}
+
+/*Cabeçalho*/
+header {
+  background-color: var(--cor-padrao-verde-escuro);
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 38px;
+  /*position: sticky;  junção do fixed + static, deixando ele fixo no topo, mas com fluxo para descer para baixo */
+  /*top: 0; distancia do topo, zero distancia no caso */
+  z-index: 4; /* Hierarquia, posições, quanto maior a hierarquia maior o nivel de importancia (sobreposição) */
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #f0f0ec;
+
+  & p span img {
+    transform: translateY(2px); /* EIXO X E EIXO Y, EIXO Z */
+
+    animation: rodar-moeda 1s infinite;
+    /* perspective: 1000px; perpectiva de animação (pesquisar)*/
+  }
+}
+
+@keyframes rodar-moeda {
+  0% {
+    transform: rotateY(180deg) translateY(2px);
+  }
+}
+
+nav {
+  display: flex; /*Alinhar os componentes de dentro,de forma centralizada na header*/
+  align-items: center; /*Alinhar os conteúdos ao centro*/
+}
+
+nav a {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+nav ul {
+  /* Transforma a lista em um container flexível para alinhar os itens horizontalmente */
+  display: flex;
+
+  /* Remove as bolinhas da lista */
+  list-style: none;
+}
+
+/* Estilos para cada item da lista */
+nav ul li {
+  /* Adiciona um espaçamento entre os links */
+  margin: 0 15px; /* Ajuste o valor para o espaço que você quiser */
+
+  text-transform: uppercase; /*Deixa todas as letras em maiusculo*/
+}
+/*Fim da formatação da header*/
+
+/* Seção Principal */
+main {
+  padding: 40px;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #008080; /* Teal */
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Seção: O que é Investir? */
+.intro-section .cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.intro-section .card {
+  background-color: #e0f2f1; /* Verde claro */
+  padding: 25px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .highlight-green {
+  background-color: #a7d7c5;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.card .highlight-blue {
+  background-color: #a7c5d7;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+/* Seção: Por que começar? */
+.why-start-section {
+  background-color: #ffc0cb; /* Rosa */
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.why-start-section h2 {
+  color: #333;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.feature-item {
+  background-color: #f8de7e; /* Amarelo */
+  padding: 20px;
+  border-radius: 15px;
+  width: 28%;
+}
+
+.feature-item img {
+  /* Adicione estilos para suas imagens/ícones */
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+/* Seção: Onde investir primeiro? */
+.where-to-invest-section {
+  background-color: #2d4a54;
+  color: white;
+  padding: 40px;
+  margin-top: 40px;
+}
+
+.where-to-invest-section h2 {
+  color: white;
+}
+
+.investment-options .option {
+  background-color: #008080;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Seção: Passo a passo */
+.steps-section {
+  padding: 40px 20px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background-color: #2d4a54;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 22%;
+  min-width: 200px;
+}
+
+.step h4 {
+  color: #a7d7c5;
+  margin-bottom: 10px;
+}
+
+.step ul {
+  list-style-position: inside;
+  padding-left: 10px;
+}
+
+/* Seção de Dicas */
+.tips-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.tip-card {
+  background-color: #e0e0e0;
+  padding: 25px;
+  border-radius: 15px;
+  width: 45%;
+  border-left: 5px solid #008080;
+}
+
+.tip-card ul {
+  list-style-type: none;
+  margin-top: 15px;
+}
+
+.tip-card li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.main-footer {
+  background-color: #007f70;
+  color: white;
+  padding-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 40px 40px 40px;
+  flex-wrap: wrap;
+}
+
+.footer-links a,
+.footer-contact p {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #44616b;
+}
