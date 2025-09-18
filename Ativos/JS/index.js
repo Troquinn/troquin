@@ -1,19 +1,25 @@
-let pessoas = document.querySelectorAll(".animacao-pessoas img");
+const imagens = [
+    "../IMAGENS/imagens-home/p11.svg",
+    "../IMAGENS/imagens-home/p12.svg",
+    "../IMAGENS/imagens-home/p14.svg",
+    "../IMAGENS/imagens-home/p15.svg"
+];
+
+const imgElemento = document.getElementById("pessoas");
 let indice = 0;
 
-function trocarPessoas() {
-  // tira a classe da imagem atual
-  pessoas[indice].classList.remove("active");
+function trocarImagemSuave() {
+    // Faz a imagem sumir
+    imgElemento.style.opacity = 0;
 
-  // avança para a próxima imagem (volta para 0 se for a última)
-  indice = (indice + 1) % pessoas.length;
-
-  // coloca a classe na nova imagem
-  pessoas[indice].classList.add("active");
+    // Depois do fade, troca a imagem e reaparece
+    setTimeout(() => {
+        indice = (indice + 1) % imagens.length;
+        imgElemento.src = imagens[indice];
+        imgElemento.style.opacity = 1;
+    }, 2000); // 2000ms = tempo do fade
 }
 
-// deixa a primeira imagem visível no início
-pessoas[indice].classList.add("active");
+// Troca a cada 4 segundos
+setInterval(trocarImagemSuave, 4000);
 
-// troca a cada 3 segundos
-setInterval(trocarPessoas, 2900);
