@@ -17,7 +17,7 @@
   /* Cores Secundárias */
   --cor-secundaria-cinza-verde: #779C91;
   --cor-secundaria-rosa: #FF81A7;
-  --cor-secundaria-azul: #071DAD;
+  --cor-secundaria-azul: #4056E8;
   --cor-secundaria-amarelo: #E1A500;
 
   /* Cores para Texto (ajustar conforme o contraste com os fundos) */
@@ -52,7 +52,7 @@ header{
     color: #F0F0EC;
 
     &  p span img{
-        transform: translateY(2px);  /* EIXO X E EIXO Y, EIXO Z */
+        transform: translateY(5px);  /* EIXO X E EIXO Y, EIXO Z */
         
         
 
@@ -63,8 +63,13 @@ header{
     }
 }
 
+.troquin{
+    font-size: 30px;
+
+}
+
 @keyframes rodar-moeda{
-    0% {transform:rotateY(180deg) translateY(2px);}
+    0% {transform:rotateY(180deg) translateY(5px);}
     
 }
 
@@ -95,124 +100,849 @@ nav ul li {
 
     text-transform: uppercase; /*Deixa todas as letras em maiusculo*/
 }
+
+
+
+/* Responsividade do header */
+@media (max-width: 768px) {
+    header nav {
+        display: none;  /* esconde o menu */
+    }
+
+    header .logo {
+        display: flex;          /* garante que a logo fique visível */
+        justify-content: center; /* centraliza horizontalmente */
+        width: 100%;
+    }
+
+    header .logo img {
+        max-width: 150px;  /* ajusta tamanho da logo em mobile */
+        height: auto;
+    }
+}
+
+#menu-toggle {
+    display: none; /* invisível em desktop */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+        z-index: 6;
+    }
+
+    header nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-padrao-verde-escuro);
+        text-align: center;
+        z-index: 5;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    header .logo {
+        justify-content: center;
+        width: 100%;
+    }
+
+#menu-toggle {
+    display: none; /* invisível no desktop */
+    font-size: 1.8rem; /* tamanho do ícone */
+    color: var(--cor-padrao-offwhite);      /* cor do ícone */
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+}
+}
+
 /*Fim da formatação da header*/
 
 
 /*Sessão 1*/
-.apresentação{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.apresentacao {
     position: relative;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 139vh; /* altura mínima da tela */
+    
+    /* Fundo */
+    background-image: url("../IMAGENS/imagens-home/fundo-correto-verde.png");
+    background-size: cover;       /* cobre toda a section mantendo proporção */
+    background-position: center;  /* centraliza a imagem */
+    background-repeat: no-repeat;
+
+    overflow: hidden;
 }
 
-.container{ 
+/* Container do conteúdo */
+.container { 
+    display: flex;
+    align-items: center;     
+    justify-content: center; 
+    gap: 120px; /* espaço entre pessoas e card */
+    width: 100%;
+    max-width: 1600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Animação das pessoas */
+#pessoas {
+    width: 100%;
+    max-width: 600px; /* ajuste do tamanho da animação */
+    transition: opacity 2s ease-in-out;
+}
+
+/* Card branco */
+.content {
+    background-color: white;
+    border-radius: 35px;
     display: flex;
     flex-direction: column;
+
+    width: 90%;
+    max-width: 500px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+
+    position: relative;
+    box-shadow: 56px 32px 30px rgba(0,0,0,0.25);
+    z-index: 2;
+
+    transform: rotate(-5.12deg);
+    animation: mover 3s infinite ease-in-out;
 }
 
-#fundo{
-    width: 100%;
-    z-index: 1;
+/* Dinheiro animado */
+#dinheiro1 {
+    position: absolute;
+    top: -130px;
+    right: -120px;
+    animation: subir-e-descer 2s infinite ease-in-out;
 }
 
-.content{
-        background-color: white;
-        border-radius:35px;
-        display: flex;
-        flex-direction: column;
-        width: 500px;
-        padding: 60px 32px;
-        padding-right: 70px;
-        position: relative;
-        box-shadow: 56px 32px 30px rgba(0,0,0, 0.25);
-        transform: rotate( -5.12deg);
-        position: absolute;
-        z-index: 2;
-        margin-top: 13%;
-        margin-left: 10%;
-
-        /*animação*/
-        animation:mover 2s infinite ease-in-out ;
-
-
-
-         & #dinheiro1 {
-            position: absolute;
-            top: -130px;
-            right: -120px;
-
-            /*Animação do dinehiro*/
-            animation: subir-e-descer 2s infinite ease-in-out;
-        }
-
-        & #dinheiro2{
-            position: absolute;
-            bottom: -140px;
-            left: -100px;
-
-            /*Animação do dinehiro*/
-            animation: subir-e-descer 2s infinite ease-in-out;
-        }
-
-        & h2{
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-           
-        }
-
-        & h2{
-            font-size: 2.25rem;
-            color: var(--cor-padrao-verde-escuro);
-
-            & span{
-             color: var(--cor-secundaria-azul);
-
-        }
-
+#dinheiro2 {
+    position: absolute;
+    bottom: -140px;
+    left: -100px;
+    animation: subir-e-descer 2s infinite ease-in-out;
 }
 
-/*Animação para a sessão  home/ div content*/
-@keyframes subir-e-descer{
+/* Textos do card */
+.content h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    color: var(--cor-padrao-verde-escuro);
+}
+
+.content h2 span {
+    color: var(--cor-secundaria-azul);
+}
+
+/* Keyframes */
+@keyframes mover {
+    0% { transform: rotate(-5.12deg) translateY(0); }
+    50% { transform: rotate(-5.12deg) translateY(-20px); }
+    100% { transform: rotate(-5.12deg) translateY(0); }
+}
+
+@keyframes subir-e-descer {
     0% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0); }
 }
-    
 
-@keyframes mover {
-  0% { transform: rotate(-5.12deg) translateY(0); }
-  50% { transform: rotate(-5.12deg) translateY(-20px); }
-  100% { transform: translateY();}
- 
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    /* Card branco desaparece */
+    .content {
+        display: none;
+    }
 
+    /* Dinheiros desaparecem */
+    #dinheiro1,
+    #dinheiro2 {
+        display: none;
+    }
+
+    /* Pessoas podem diminuir proporcionalmente */
+    #pessoas {
+        max-width: 450px; /* ajuste para mobile */
+    }
 }
 
 
-.animacao-pessoas{
-    position: absolute;
+
+
+
+
+
+
+/* Começo da sessão 2 */
+.sobre-conteudos {
     display: flex;
-    margin-left: 50%;
-    margin-top: 3%;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-padrao-offwhite);
+}
+
+.container_pai {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* espaçamento vertical entre partes */
+    max-width: 1500px;
+    width: 100%;
+    margin: 4rem auto 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Parte 1: card */
+.parte-um {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 2rem;
+    min-height: 350px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#card {
+    width: 100%;      /* ocupa toda a largura disponível do container */
+    max-width: 600px; /* tamanho máximo para desktop */
+    height: auto;     /* mantém proporção */
+    display: block;
+    animation: subir-e-descer 2s infinite ease-in-out;
+}
+
+/* Texto do card */
+.card-text {
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    font-size: clamp(1rem, 4vw, 2.5rem); /* responsivo */
+    margin-top: 1rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    #card {
+        max-width: 90%;  /* ocupa quase toda a tela no celular */
+    }
+
+    .card-text {
+        font-size: clamp(0.9rem, 3vw, 1.5rem);
+        margin-top: 0.5rem;
+    }
+}
+
+
+
+
+
+
+
+/*Divs com imagens*/
+.caixas-container {
+    display: flex;
+    flex-wrap: wrap;       /* permite quebrar as caixas para linha de baixo */
+    justify-content: center;
+    gap: 4rem;             /* espaço entre cada caixa */
+}
+.parte-dois{
+    display: flex;
+    flex-direction: column; /* empilha caixas + pinguim verticalmente */
+    gap: 2rem;              /* espaço entre caixas e pinguim */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+
+/*CAIXAS */
+.caixa-um, .caixa-dois, .caixa-tres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 35px;
+    padding: 40px 30px;      /* padding uniforme */
+    width: 360px;             /* largura fixa */
+    min-height: 250px;        /* altura mínima uniforme */
+    box-shadow: 36px 32px 30px rgba(0,0,0,0.10);
+    gap: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+}
+
+
+.titulo {
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    white-space: nowrap;     /* força uma linha só */
+    overflow: hidden;        /* corta se exceder */
+    text-overflow: ellipsis; /* adiciona "..." se necessário */
+    color: var(--cor-padrao-offwhite);
+}
+
+.texto-div {
+    font-size: 20px;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* força 3 linhas */
+    overflow: hidden;
+    text-align: center;
+}
+
+#menina-tro, #menino, #contas{
+    position: absolute;
+    margin-top: -12rem;
+}
+
+.caixa-um {
+    background-color: var(--cor-padrao-verde-escuro);
+}
+
+.caixa-dois {
+    background-color: var(--cor-padrao-verde-azulado);
+}
+
+.caixa-tres {
+    background-color: var(--cor-secundaria-cinza-verde);
+}
+
+
+@media (max-width: 768px) {
+    .caixa-um, .caixa-dois, .caixa-tres {
+        width: 90%;      /* ocupa quase toda a tela */
+        min-height: auto; /* deixa a altura se ajustar ao conteúdo */
+    }
+
+    .titulo {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .texto-div {
+        font-size: clamp(0.8rem, 3vw, 1.2rem);
+    }
+}
+
+
+
+/* Container pinguim + card */
+.pinguim {
+    display: flex;
+    flex-direction: row;       /* lado a lado */
+    justify-content: center;   /* centraliza horizontalmente */
+    align-items: center;       /* centraliza verticalmente */
+    gap: 20px;                 /* espaço entre pinguim e card */
+    position: relative;
+    margin-bottom: 12rem;
+}
+
+/* Imagem do pinguim */
+#ping {
+    width: 150px;              /* tamanho base */
+    max-width: 25%;            /* proporcional */
+    height: auto;
+    position: relative;
+    left: 35px;
     z-index: 2;
 }
 
+/* Card rosa */
+#card-desc {
+    background-color: var(--cor-secundaria-rosa);
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;              /* tamanho base */
+    max-width: 40%;            /* proporcional */
+    padding: 20px 30px;
+    box-sizing: border-box;
+    position: relative;
+    left: -70px;               /* puxa o card para direita quando o pinguim está visível */
+}
+
+/* Link dentro do card */
+#card2 {
+    text-decoration: none;      /* remove sublinhado */
+    color: var(--cor-padrao-offwhite);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .pinguim {
+        gap: 10px;
+    }
+
+    #ping {
+        display: none;           /* pinguim desaparece */
+    }
+
+    #card-desc {
+        width: 200px;
+        max-width: 60%;
+        padding: 15px 20px;
+        left: 0;                 /* remove deslocamento */
+        margin: 0 auto;          /* centraliza horizontalmente */
+    }
+
+    #card2 {
+        font-size: 16px;
+        text-decoration: none;   /* garante que continue sem sublinhado */
+    }
+}
+/*Fim da sessão2*/
 
 
-.animacao-pessoas img {  
+
+
+
+
+
+
+
+/*Sessão 3*/
+/* container principal */
+informcoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  
+
+}
+#imagem-de-fundo{
+  position: relative; /* referência para as imagens absolutas */
+  width: 100%;
+  flex-direction: column;
+  z-index: 2;
+  background: linear-gradient(to bottom, var(--cor-padrao-offwhite) 0%, var(--cor-padrao-offwhite) 50%, var(--cor-secundaria-cinza-verde) 50%, var(--cor-secundaria-cinza-verde) 100%);
+
+}
+
+#imagem-de-fundo > img {
+  width: 100%;
+  height: auto;
+}
+
+/* container das imagens sobre o fundo */
+.imagens_se div img{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  z-index: 3;
+}
+
+
+/* top proporcional ao fundo */
+/* Desktop */
+.info  { top: -7%;  max-width: 55%; }
+.info2 { top: 13%;  max-width: 48%; }
+.info3 { top: 34%;  max-width: 48%; }
+.info4 { top: 55%;  max-width: 48%; }
+.info5 { top: 73%;  max-width: 48%; }
+
+/* Tablet */
+@media (max-width: 768px) {
+  .info  { max-width: 60%; } 
+  .info2 { max-width: 38%; }
+  .info3 { max-width: 38%; }
+  .info4 { max-width: 38%; }
+  .info5 { max-width: 38%; }
+}
+
+/* Celular */
+@media (max-width: 500px) {
+  .info  { max-width: 60%; } 
+  .info2 { max-width: 40%; }
+  .info3 { max-width: 40%; }
+  .info4 { max-width: 40%; }
+  .info5 { max-width: 40%; }
+}
+/*Fim da Sessão 3*/
+
+
+
+
+
+
+
+
+
+/*Patrocinadores*/
+.patrocinadores{
+    background-image: url("../IMAGENS/imagens-home/fundo-patroci.png");
+    background-size: cover;        /* cobre toda a div */
+    background-position: center;   /* centraliza a imagem */
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: -14rem;            /* mantém a colagem com a seção de cima */
+    z-index: 1;
+
+    /* Layout interno */
+    display: flex;
+    flex-direction: column;        /* título em cima, logos embaixo */
+    align-items: center;           /* centraliza horizontalmente */
+    justify-content: flex-start;   /* conteúdo começa do topo */
+    padding: 8rem 1rem;            /* espaço interno */
+    gap: 3rem;  
+    z-index: 1;                   /* espaço entre título e logos */
+
+}
+
+.container_mae{
+    display: flex;
+    flex-direction: row; /* linha principal */
+    flex-wrap: wrap;     /* permite quebrar para a próxima linha */
+    justify-content: space-around; /* espaçamento entre os itens */
+    gap: 3rem; /* espaçamento entre linhas e colunas */
+    justify-content: center;   /* centraliza container_mae horizontalmente */
+    padding: 7rem 10rem;        /* dá espaço interno sem usar margin negativa */
+
+}
+
+.patrocinadores h1 {
+    color: var(--cor-padrao-offwhite);        
+    font-size: clamp(2rem, 5vw, 5rem); /* responsivo: celular até desktop */
+    font-weight: 800; /* bem grosso (depende da fonte escolhida) */
+    text-align: center;   
+    margin: 0;  
+    text-transform: uppercase; 
+    line-height: 1.2; /* melhora a proporção entre linhas */
+    padding-top: 9rem; /* aumenta o espaço acima do conteúdo */
+}
+
+.patro{
+    flex: 1 1 calc(33.333% - 2rem); /* 3 por linha no desktop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-padrao-verde-escuro);
+    height: 300px; 
+    border-radius: 20px;
+
+}
+
+.patro img {
+    max-width: 79%;
+    max-height: 79%;
+
+}
+
+@keyframes mudarCorImg {
+    0% {
+        filter: brightness(2) invert(0); /* cor original */
+    }
+    100% {
+        filter: brightness(0) invert(0); /* cor de destaque */
+    }
+}
+
+/* Estilo base da imagem */
+.patro img {
+    max-width: 79%;
+    max-height: 79%;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover aplica a animação e mantém o estado final */
+.patro:hover img {
+    animation: mudarCorImg 0.4s forwards; /* mantém cor escura enquanto o cursor estiver */
+    transform: scale(1.05); /* leve zoom */
+}
+
+
+
+/* Tablet: 2 por linha */
+@media (max-width: 900px) {
+    .patro {
+        flex: 1 1 calc(50% - 2rem);
+        height: 150px; /* pode aumentar no tablet */
+    }
+}
+
+/* Celular: 1 por linha */
+@media (max-width: 600px) {
+    .patro {
+        flex: 1 1 100%;
+        height: 120px; /* mais alto no celular */
+    }
+}
+
+
+/* Sessão 3 */
+.duvida {
+    text-align: center; /* centraliza o título */
+    padding: 40px 20px;
+}
+
+/* Título da seção */
+#titulo_duvida{
+    color: var(--cor-padrao-verde-escuro);
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 30px; /* espaço abaixo do título */
+}
+
+/* Container da imagem + conteúdo */
+.duvida-conteudo {
+    display: flex;
+    flex-direction: row;       /* lado a lado no desktop */
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Imagem do menino */
+.menino_duvida img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+/* Conteúdo das dúvidas */
+.conteudo_duvidas {
+    flex: 1;                   /* ocupa o restante do espaço */
+    background: var(--cor-padrao-verde-escuro);
+    color: var(--cor-padrao-verde-escuro);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    display: flex;             /* ativa flexbox */
+    flex-direction: column;    /* empilha os detalhes verticalmente */
+    gap: 15px;
+}
+
+/* Caixinhas */
+.caixinhas{
+    background-color: var(--cor-padrao-offwhite);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+/* Remove a seta padrão */
+.duvida .conteudo_duvidas details summary {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding-left: 40px; /* espaço para a seta */
+}
+
+/* Seta customizada */
+.duvida .conteudo_duvidas details summary::before {
+    content: '';
     position: absolute;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;   /* aqui está a transição */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    background-image: url('../IMAGENS/imagens-home/ep_arrow-down-bold.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
 }
 
-.animacao-pessoas img.active {
-   opacity: 1;
-
+/* Gira a seta quando o details estiver aberto */
+.duvida .conteudo_duvidas details[open] summary::before {
+    transform: translateY(-50%) rotate(180deg);
 }
-    
+
+/* Tipografia dos summaries e parágrafos */
+h1, h2{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+p{
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.maior::first-letter {
+    text-transform: uppercase;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .duvida-conteudo {
+        flex-direction: column;  /* empilha imagem e conteúdo */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .conteudo_duvidas {
+        width: 90%;
+    }
+
+    .menino_duvida img {
+        display: none;
+    }
+}
 
 
 
 
+
+
+
+
+
+
+
+/* Footer principal */
+#imagem-footer {
+    display: flex;
+    flex-direction: row;       /* lado a lado */
+    justify-content: space-around;
+    align-items: flex-start;   /* alinha pelo topo */
+    flex-wrap: wrap;           /* permite quebra em mobile */
+    gap: 50px;                 /* espaço entre colunas */
+    padding: 80px 40px;        /* controla topo e base do footer */
+    min-height: 760px;
+    background-image: url("../IMAGENS/imagens-home/footer-certo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--cor-padrao-offwhite);
+    position: relative;
+}
+
+/* Logo */
+#logo_troquin {
+    margin-top: 20rem;
+}
+
+#logo_troquin img {
+    width: 200px;   /* tamanho desktop */
+    height: auto;
+}
+
+/* Textos do mapa */
+.mapa_4 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 20rem;
+}
+
+.mapa_5 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 19rem;
+}
+
+.mapa_6 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 19rem;
+}
+
+.mapa {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 2.0;
+}
+
+#redes_sociais, #nosso_contato {
+    color: var(--cor-padrao-offwhite);
+    line-height: 2.3;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    #imagem-footer {
+        flex-direction: column;   /* empilha verticalmente */
+        align-items: center;      /* centraliza horizontalmente */
+        gap: 2rem;                /* distância menor entre divs empilhadas */
+        min-height: auto;
+        padding: 40px 20px;       /* reduz padding no mobile */
+    }
+
+
+    /* Reduzir margem superior das colunas de mapa e contato, mantendo diferenças */
+    .mapa_4 {
+        margin-top: 2rem;
+        font-size: 24px; /* diminui fonte no mobile */
+    }
+    .mapa_5 {
+        margin-top: 2rem;
+        font-size: 24px;
+    }
+    .mapa_6 {
+        margin-top: 1.5rem;
+        font-size: 24px;
+    }
+
+    .mapa {
+        font-size: 20px;
+    }
+
+    #nosso_contato,
+    #redes_sociais {
+        margin-top: 1.5rem;
+    }
+
+    /* Centraliza o conteúdo das divs */
+    #logo_troquin,
+    #mapa_do_site,
+    #nosso_contato,
+    #redes_sociais,
+    #creditos {
+        text-align: center;
+    }
+
+    /* Centraliza imagens das redes sociais */
+    #redes_sociais img {
+        margin: 1rem auto;
+    }
+}
