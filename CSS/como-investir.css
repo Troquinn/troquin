@@ -714,69 +714,104 @@ nav ul li {
   }
 }
 
-.spacer {
-  height: 200px;
-}
-
-/* Footer principal */
-#imagem-footer {
-  display: flex;
-  flex-direction: row; /* lado a lado */
-  justify-content: space-around;
-  align-items: flex-start; /* alinha pelo topo */
-  flex-wrap: wrap; /* permite quebra em mobile */
-  gap: 50px; /* espaço entre colunas */
-  padding: 80px 40px; /* controla topo e base do footer */
-  min-height: 760px;
-  background-image: url("../IMAGENS/imagens-home/footer-certo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--cor-padrao-offwhite);
+footer {
   position: relative;
+  width: 100%;
+  margin-top: 10%;
+  overflow: hidden;
 }
 
-/* Logo */
-#logo_troquin {
-  margin-top: 20rem;
+.fundo {
+  position: relative;
+  width: 100%;
 }
 
-#logo_troquin img {
-  width: 200px; /* tamanho desktop */
+.fundo img {
+  width: 100%;
   height: auto;
+  display: block;
 }
 
-/* Textos do mapa */
-.mapa_4 {
-  font-size: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 20rem;
+.logo-do-footer {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
 }
 
-.mapa_5 {
-  font-size: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 19rem;
+.logo-do-footer img {
+  width: 220px;
+  height: auto;
+  margin-left: -370%;
+  margin-top: 100%;
 }
 
-.mapa_6 {
-  font-size: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 19rem;
+.footer-content {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  color: white;
+  font-family: "Nunito", sans-serif;
 }
 
-.mapa {
-  font-size: 30px;
-  font-weight: 600;
-  text-transform: capitalize;
-  line-height: 2;
+.footer-main-content {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4%;
+  width: 100%;
+  margin-left: 60%;
 }
 
-#redes_sociais,
-#nosso_contato {
-  color: var(--cor-padrao-offwhite);
-  line-height: 2.3;
+.footer-section {
+  text-align: center;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.footer-section p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: white;
+}
+
+.contato p {
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffb800;
+  transform: translateY(-3px);
+}
+
+.direitos {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 4%;
+  width: 100%;
 }

@@ -10,6 +10,22 @@
       type="image/png"
       href="../IMAGENS/imagens-home/moeda troquin.svg"
     />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://website-widgets.pages.dev/dist/sienna.min.js"
+      defer
+    ></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
   </head>
   <body class="page-body">
     <header>
@@ -282,28 +298,60 @@
 
     <!--Rodapé do site-->
     <footer>
-      <div id="imagem-footer">
-        <div id="logo_troquin">
-          <img
-            src="../IMAGENS/imagens-home/logo-troquim.svg"
-            alt="Logo Troquim"
-          />
+      <div class="fundo">
+        <img
+          src="../IMAGENS/img_calculadoras/FOOTER2.png"
+          alt="Background do footer"
+        />
+        <div class="logo-do-footer">
+          <a href="#">
+            <img
+              src="../IMAGENS/img_calculadoras/LOGOTIPO.png"
+              alt="Logotipo da Troquin"
+            />
+          </a>
         </div>
 
-        <div id="nosso_contato">
-          <h4 class="mapa_5">contato</h4>
-          <p class="mapa">troquim@gmail.com</p>
-          <p class="mapa">(11)9875-3211</p>
-        </div>
-        <div id="redes_sociais">
-          <h4 class="mapa_6">redes sociais</h4>
-          <img
-            id="redes"
-            src="../IMAGENS/imagens-home/redes.svg"
-            alt="redes sociais"
-          />
+        <div class="footer-content">
+          <div class="footer-main-content">
+            <div class="footer-section contato">
+              <h3>NOSSO CONTATO</h3>
+              <p>troquin@gmail.com</p>
+              <p>(11) 9875-3211</p>
+            </div>
+
+            <div class="footer-section redes-sociais">
+              <h3>NOSSAS REDES</h3>
+              <div class="social-icons">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-section direitos">
+            <p>TROQUIN © 2024 - Todos os Direitos Reservados</p>
+          </div>
         </div>
       </div>
     </footer>
+    <!-- Aqui termina o footer -->
+    <!-- Aqui termina o footer -->
+
+    <script src="../JS/calculadora.js"></script>
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
   </body>
 </html>

@@ -1,330 +1,474 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: 0;
-    position: relative;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  position: relative;
 }
 
 /* Definindo as variáveis de cores */
 :root {
   /* Cores Padronizadas */
-  --cor-padrao-offwhite: #F0F0EC;
-  --cor-padrao-verde-azulado: #00AC98;
-  --cor-padrao-verde-escuro: #007F70;
+  --cor-padrao-offwhite: #f0f0ec;
+  --cor-padrao-verde-azulado: #00ac98;
+  --cor-padrao-verde-escuro: #007f70;
 
   /* Cores Secundárias */
-  --cor-secundaria-cinza-verde: #779C91;
-  --cor-secundaria-rosa: #FF81A7;
-  --cor-secundaria-azul: #071DAD;
-  --cor-secundaria-amarelo: #E1A500;
+  --cor-secundaria-cinza-verde: #779c91;
+  --cor-secundaria-rosa: #ff81a7;
+  --cor-secundaria-azul: #071dad;
+  --cor-secundaria-amarelo: #e1a500;
 
   /* Cores para Texto (ajustar conforme o contraste com os fundos) */
-  --cor-texto-para-destaque-em-animacao: #2B2B2B; /* Usar em fundos claros */
-  --cor-texto-claro: #F0F0EC; /* Usar em fundos escuros ou vibrantes */
+  --cor-texto-para-destaque-em-animacao: #2b2b2b; /* Usar em fundos claros */
+  --cor-texto-claro: #f0f0ec; /* Usar em fundos escuros ou vibrantes */
 }
 
-
-body{
-    font-family:"Nunito", sans-serif;
-    background-color: var(--cor-padrao-offwhite);
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--cor-padrao-offwhite);
 }
-
-
-
 
 /*Cabeçalho*/
-header{
-    background-color: var(--cor-padrao-verde-escuro);
-    display: flex;
-    justify-content: space-between;
-    padding: 18px 38px;
-    /*position: sticky;  junção do fixed + static, deixando ele fixo no topo, mas com fluxo para descer para baixo */
-    /*top: 0; distancia do topo, zero distancia no caso */
-    z-index: 4; /* Hierarquia, posições, quanto maior a hierarquia maior o nivel de importancia (sobreposição) */
-    text-wrap: nowrap;
+header {
+  background-color: var(--cor-padrao-verde-escuro);
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 38px;
+  /*position: sticky;  junção do fixed + static, deixando ele fixo no topo, mas com fluxo para descer para baixo */
+  /*top: 0; distancia do topo, zero distancia no caso */
+  z-index: 4; /* Hierarquia, posições, quanto maior a hierarquia maior o nivel de importancia (sobreposição) */
+  text-wrap: nowrap;
 }
 
-.logo{
-    font-size: 36px;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #F0F0EC;
+.logo {
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #f0f0ec;
 
-    &  p span img{
-        transform: translateY(2px);  /* EIXO X E EIXO Y, EIXO Z */
-        animation: rodar-moeda 2s infinite; 
-        /* perspective: 1000px; perpectiva de animação (pesquisar)*/
-    }
+  & p span img {
+    transform: translateY(2px); /* EIXO X E EIXO Y, EIXO Z */
+    animation: rodar-moeda 2s infinite;
+    /* perspective: 1000px; perpectiva de animação (pesquisar)*/
+  }
 }
 
-@keyframes rodar-moeda{
-    0% {transform:rotateY(0deg) translateY(2px);}
-    50% {transform: rotateY(180deg) translateY(2px);}
-    100% {transform: rotateY(0deg) translateY(2px);}
-    
+@keyframes rodar-moeda {
+  0% {
+    transform: rotateY(0deg) translateY(2px);
+  }
+  50% {
+    transform: rotateY(180deg) translateY(2px);
+  }
+  100% {
+    transform: rotateY(0deg) translateY(2px);
+  }
 }
 
-nav{
-    display: flex; /*Alinhar os componentes de dentro,de forma centralizada na header*/
-    align-items: center; /*Alinhar os conteúdos ao centro*/
+nav {
+  display: flex; /*Alinhar os componentes de dentro,de forma centralizada na header*/
+  align-items: center; /*Alinhar os conteúdos ao centro*/
 }
 
-nav a{
-    color:aliceblue;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
+nav a {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 nav ul {
-    /* Transforma a lista em um container flexível para alinhar os itens horizontalmente */
-    display: flex;
+  /* Transforma a lista em um container flexível para alinhar os itens horizontalmente */
+  display: flex;
 
-    /* Remove as bolinhas da lista */
-    list-style: none;
+  /* Remove as bolinhas da lista */
+  list-style: none;
 }
 
 /* Estilos para cada item da lista */
 nav ul li {
-    /* Adiciona um espaçamento entre os links */
-    margin: 0 15px; /* Ajuste o valor para o espaço que você quiser */
+  /* Adiciona um espaçamento entre os links */
+  margin: 0 15px; /* Ajuste o valor para o espaço que você quiser */
 
-    text-transform: uppercase; /*Deixa todas as letras em maiusculo*/
+  text-transform: uppercase; /*Deixa todas as letras em maiusculo*/
 }
 /*Fim da formatação da header*/
 
-main{
-    width: 100vw;
-    height: auto;
+main {
+  width: 100vw;
+  height: auto;
 }
 
-.titulo-pagina{
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.titulo-pagina {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.parte-azul-titulo{
-    position: absolute;
-    background-color: var(--cor-secundaria-azul);
-    width: 50vw;
-    border-radius: 20px;
-    height: 204px;
-    color: var(--cor-padrao-offwhite);
+.parte-azul-titulo {
+  position: absolute;
+  background-color: var(--cor-secundaria-azul);
+  width: 50vw;
+  border-radius: 20px;
+  height: 204px;
+  color: var(--cor-padrao-offwhite);
 }
 
-.parte-verde-titulo{
-    position: absolute;
-    background-color: var(--cor-padrao-verde-escuro);
-    width: 52vw;
-    border-radius: 20px;
-    height: 204px;
-    transform: rotate(2.266deg);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    top: 2vh;
-    left: 24.5vw;
+.parte-verde-titulo {
+  position: absolute;
+  background-color: var(--cor-padrao-verde-escuro);
+  width: 52vw;
+  border-radius: 20px;
+  height: 204px;
+  transform: rotate(2.266deg);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 2vh;
+  left: 24.5vw;
 }
 
-.parte-verde-titulo p{
-    color: var(--cor-padrao-offwhite);
-    text-transform: uppercase;
-    font-size: 3rem;
-    font-weight: 700;
-    transform: rotate(-2.266deg);
+.parte-verde-titulo p {
+  color: var(--cor-padrao-offwhite);
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
+  transform: rotate(-2.266deg);
 }
 
-.ponto-azul-titulo{
-    position: absolute;
-    z-index: 3;
-    left: 26vw;
-    top: 2vh;
+.ponto-azul-titulo {
+  position: absolute;
+  z-index: 3;
+  left: 26vw;
+  top: 2vh;
 }
 
-#dinheiro1{
-    top: -7vh;
-    left: 30vw;
+#dinheiro1 {
+  top: -7vh;
+  left: 30vw;
 }
 
-#dinheiro2{
-    top: 13vh;
-    left: -30vw;
+#dinheiro2 {
+  top: 13vh;
+  left: -30vw;
 }
 
-.missao-e-visao{
-    margin-top: 35vh;
-    height: 90vh;
-    display: flex;
+.missao-e-visao {
+  margin-top: 35vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#img1-mvv {
+  width: 200px;
+  position: absolute;
+  left: 43.5vw;
+  top: -16.5vh;
+  z-index: 1;
+}
+
+#img2-mvv {
+  width: 220px;
+  position: absolute;
+  left: 42vw;
+  top: 40vh;
+  z-index: 1;
+}
+
+.card-mvv {
+  background-color: var(--cor-padrao-verde-escuro);
+  color: var(--cor-padrao-offwhite);
+  width: 45vw;
+  height: 35vh;
+  text-align: center;
+  border-radius: 20px;
+  padding: 4vh;
+}
+
+.titulo-mvv {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-top: 12vh;
+}
+
+.texto-mvv {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.valores {
+  margin-top: 10vh;
+}
+
+.valor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 50vh;
+}
+
+#valor1 {
+  background-color: var(--cor-secundaria-amarelo);
+}
+
+.nome-valor {
+  position: absolute;
+  z-index: 1;
+  color: var(--cor-padrao-offwhite);
+  font-size: 2rem;
+}
+
+#valor2 {
+  background-color: var(--cor-secundaria-rosa);
+}
+
+#nome-valor1 {
+  top: 22.5vh;
+  left: 50.5vw;
+}
+
+#nome-valor2 {
+  top: 22.5vh;
+  right: 53vw;
+}
+
+#valor3 {
+  background-color: var(--cor-secundaria-cinza-verde);
+}
+
+#nome-valor3 {
+  top: 22.5vh;
+  left: 52vw;
+}
+
+#valor4 {
+  background-color: #098374;
+}
+
+#nome-valor4 {
+  top: 22.5vh;
+  right: 50vw;
+}
+
+#valor5 {
+  background-color: #7b3110;
+}
+
+#nome-valor5 {
+  top: 22.5vh;
+  left: 50.5vw;
+}
+
+.ods {
+  background-color: #00685b;
+  color: var(--cor-padrao-offwhite);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagens-ods {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.img-ods {
+  width: 18vw;
+}
+
+.equipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-equipe {
+  background-color: var(--cor-padrao-verde-escuro);
+  color: var(--cor-padrao-offwhite);
+  text-align: center;
+  width: 22vw;
+  margin-bottom: 10vh;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.card-equipe h3 {
+  font-weight: bolder;
+}
+
+.card-equipe img {
+  width: 15vw;
+  border-radius: 20px;
+  width: 15vw;
+}
+
+.card-equipe a {
+  color: #fff;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  margin-top: 10%;
+  overflow: hidden;
+}
+
+.fundo {
+  position: relative;
+  width: 100%;
+}
+
+.fundo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-do-footer {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+}
+
+.logo-do-footer img {
+  width: 220px;
+  height: auto;
+  margin-left: -370%;
+  margin-top: 100%;
+}
+
+.footer-content {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  color: white;
+  font-family: "Nunito", sans-serif;
+}
+
+.footer-main-content {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4%;
+  width: 100%;
+  margin-left: 60%;
+}
+
+.footer-section {
+  text-align: center;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.footer-section p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: white;
+}
+
+.contato p {
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffb800;
+  transform: translateY(-3px);
+}
+
+.direitos {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 4%;
+  width: 100%;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .footer-main-content {
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
+    gap: 2rem;
+  }
 
-#img1-mvv{
-    width: 200px;
-    position: absolute;
-    left: 43.5vw;
-    top: -16.5vh;
-    z-index: 1;
-}
+  .logo-do-footer {
+    top: 10%;
+  }
 
-#img2-mvv{
-    width: 220px;
-    position: absolute;
-    left: 42vw;
-    top: 40vh;
-    z-index: 1;
-}
+  .logo-do-footer img {
+    width: 140px;
+  }
 
-.card-mvv{
-    background-color: var(--cor-padrao-verde-escuro);
-    color: var(--cor-padrao-offwhite);
-    width: 45vw;
-    height: 35vh;
-    text-align: center;
-    border-radius: 20px;
-    padding: 4vh;
-}
+  .footer-content {
+    top: 40%;
+  }
 
-.titulo-mvv{
-    text-transform: uppercase;
-    font-size: 2rem;
-    margin-top: 12vh;
-}
+  .footer-section h3 {
+    font-size: 1.3rem;
+  }
 
-.texto-mvv{
-    font-size: 1.15rem;
-    font-weight: 500;
-}
+  .footer-section p {
+    font-size: 1rem;
+  }
 
-.valores{
-    margin-top: 10vh;
-}
+  .social-icons {
+    gap: 1.2rem;
+  }
 
-.valor{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 50vh;
-}
+  .social-icons a {
+    font-size: 1.8rem;
+  }
 
-#valor1{
-    background-color: var(--cor-secundaria-amarelo);
-}
-
-.nome-valor{
-    position: absolute;
-    z-index: 1;
-    color: var(--cor-padrao-offwhite);
-    font-size: 2rem;
-}
-
-#valor2{
-    background-color: var(--cor-secundaria-rosa);
-}
-
-#nome-valor1{
-    top: 22.5vh;
-    left: 50.5vw;
-}
-
-#nome-valor2{
-    top: 22.5vh;
-    right: 53vw;
-}
-
-#valor3{
-    background-color: var(--cor-secundaria-cinza-verde);
-}
-
-#nome-valor3{
-    top: 22.5vh;
-    left: 52vw;
-}
-
-#valor4{
-    background-color: #098374;
-}
-
-#nome-valor4{
-    top: 22.5vh;
-    right: 50vw;
-}
-
-#valor5{
-    background-color: #7B3110;
-}
-
-#nome-valor5{
-    top: 22.5vh;
-    left: 50.5vw;
-}
-
-.ods{
-    background-color: #00685B;
-    color: var(--cor-padrao-offwhite);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.imagens-ods{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100vw;
-}
-
-.img-ods{
-    width: 18vw;
-}
-
-.equipe{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.cards{
-    width: 80vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.card-equipe{
-    background-color: var(--cor-padrao-verde-escuro);
-    color: var(--cor-padrao-offwhite);
-    text-align: center;
-    width: 22vw;
-    margin-bottom: 10vh;
-    border-radius: 20px;
-    padding: 25px;
-}
-
-.card-equipe h3{
-    font-weight: bolder;
-}
-
-.card-equipe img{
-    width: 15vw;
-    border-radius: 20px;
-    width: 15vw;
-}
-
-.card-equipe a{
-    color: #fff;
+  .direitos {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
 }

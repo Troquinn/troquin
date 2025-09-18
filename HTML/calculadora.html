@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A tela da calculadora da Troquin foi criada para ser simples, intuitiva e inclusiva, pensando especialmente no público de baixa renda que precisa entender como os juros e parcelas afetam o bolso."
+    />
+    <meta name="author" content="Gustavo Moura De Jesus" />
+    <link
+      rel="shortcut icon"
+      href="../IMAGENS/img_calculadoras/coin.png"
+      type="image/x-icon"
+    />
+    <title>Troquin - Calculadora</title>
+    <link rel="stylesheet" href="../CSS/calculadora.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://website-widgets.pages.dev/dist/sienna.min.js"
+      defer
+    ></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Aqui começa a header da minha pagina -->
+    <header>
+      <div class="logo">
+        <p>
+          tr<span
+            ><img
+              src="../IMAGENS/imagens-home/moeda troquin.svg"
+              alt="moeda da logo" /></span
+          >quin
+        </p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">início</a></li>
+          <li>
+            <a href="descomplique-se.html">descomplique-se</a>
+          </li>
+          <li><a href="como-investir.html">como investir</a></li>
+          <li><a href="calculadora.html">calculadora</a></li>
+          <li><a href="sobre-nos.html">sobre nós</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+    <!-- Aqui termina a header da minha pagina -->
+
+    <!-- Aqui começa o banner do site -->
+
+    <main class="container">
+      <div class="banner">
+        <h1 class="titleabnner">
+          CALCULADORA DE <br />
+          JUROS COMPOSTOS
+        </h1>
+        <p class="paragrafobanner">
+          Descubra o poder dos juros compostos e veja seu dinheiro crescer!
+        </p>
+        <img
+          src="../IMAGENS/img_calculadoras/imgbanner.png"
+          alt=""
+          class="imgbanner"
+        />
+      </div>
+    </main>
+
+    <!-- Aqui termina o banner do site -->
+
+    <!-- Aqui começa a seção de dúvidas. -->
+
+    <section class="duvidas">
+      <div class="resposta1">
+        <img src="../IMAGENS/img_calculadoras/pergunta1.png" alt="" />
+        <h1 class="pergunta">POR QUE USAR?</h1>
+        <p class="respota">
+          Porque você entende, na prática, quanto seu dinheiro pode render ao
+          longo do tempo com juros compostos.
+        </p>
+      </div>
+      <div class="resposta2">
+        <img src="../IMAGENS/img_calculadoras/pergunta2.png" alt="" />
+        <h1 class="pergunta">O QUE VOCÊ GANHA?</h1>
+        <p class="respota">
+          Clareza sobre seus investimentos, metas mais realistas e controle
+          financeiro sem complicação.
+        </p>
+      </div>
+      <div class="resposta3">
+        <img src="../IMAGENS/img_calculadoras/pergunta3.png" alt="" />
+        <h1 class="pergunta">PRA QUEM É?</h1>
+        <p class="respota">
+          Para qualquer pessoa que queira planejar o futuro, seja guardando para
+          emergências, aposentadoria ou até para realizar sonhos.
+        </p>
+      </div>
+    </section>
+
+    <!-- Aqui termina a seção de dúvidas. -->
+
+    <!-- Aqui começa a calculadora -->
+
+    <section id="titlecalculadora">
+      <h1>Faça sua simulação</h1>
+    </section>
+    <div id="calculadora">
+      <div id="infos">
+        <label class="valor-inicial" for="valor-inicial"
+          >Valor Inicial (R$)</label
+        >
+        <input type="number" id="valor-inicial" placeholder="1000" />
+        <br />
+        <label class="aporte-mensal" for="aporte-mensal"
+          >Aporte Mensal (R$)</label
+        >
+        <input type="number" id="aporte-mensal" placeholder="100" />
+        <br />
+        <label class="taxa-de-juros" for="taxa-juros"
+          >Taxa de Juros Anual (%)</label
+        >
+        <input type="number" id="taxa-juros" placeholder="8" />
+        <br />
+        <label class="periodo" for="periodo">Período (anos)</label>
+        <input type="number" id="periodo" placeholder="10" />
+
+        <!-- <button class="calculate-btn" onclick="calculateCompoundInterest()">
+       CALCULAR AGORA
+    </button> -->
+      </div>
+      <div id="resultados">
+        <div class="valor-final">
+          <label for="resultado-valor-final">Valor Final (R$)</label>
+          <input type="text" id="resultado-valor-final" readonly />
+        </div>
+        <br />
+        <div class="total-investido">
+          <label for="resultado-total-investido">Total Investido (R$)</label>
+          <input type="text" id="resultado-total-investido" readonly />
+        </div>
+        <br />
+        <div class="lucro-total">
+          <label for="resultado-lucro-total">Lucro Total</label>
+          <input type="text" id="resultado-lucro-total" readonly />
+        </div>
+        <br />
+        <div class="rentabilidade">
+          <label for="resultado-rentabilidade">Rentabilidade</label>
+          <input type="text" id="resultado-rentabilidade" readonly />
+        </div>
+      </div>
+    </div>
+
+    <!-- Aqui termina a calculadora -->
+
+    <!-- Aqui começa o footer -->
+    <!-- Aqui começa o footer -->
+    <footer>
+      <div class="fundo">
+        <img
+          src="../IMAGENS/img_calculadoras/FOOTER2.png"
+          alt="Background do footer"
+        />
+        <div class="logo-do-footer">
+          <a href="#">
+            <img
+              src="../IMAGENS/img_calculadoras/LOGOTIPO.png"
+              alt="Logotipo da Troquin"
+            />
+          </a>
+        </div>
+
+        <div class="footer-content">
+          <div class="footer-main-content">
+            <div class="footer-section contato">
+              <h3>NOSSO CONTATO</h3>
+              <p>troquin@gmail.com</p>
+              <p>(11) 9875-3211</p>
+            </div>
+
+            <div class="footer-section redes-sociais">
+              <h3>NOSSAS REDES</h3>
+              <div class="social-icons">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-section direitos">
+            <p>TROQUIN © 2024 - Todos os Direitos Reservados</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Aqui termina o footer -->
+    <!-- Aqui termina o footer -->
+
+    <script src="../JS/calculadora.js"></script>
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+  </body>
+</html>
