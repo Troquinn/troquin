@@ -1,335 +1,316 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
+/* Reset básico e variáveis de cores */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 0;
-  position: relative;
 }
 
-/* Definindo as variáveis de cores */
 :root {
-  /* Cores Padronizadas */
   --cor-padrao-offwhite: #f0f0ec;
   --cor-padrao-verde-azulado: #00ac98;
   --cor-padrao-verde-escuro: #007f70;
-
-  /* Cores Secundárias */
   --cor-secundaria-cinza-verde: #779c91;
   --cor-secundaria-rosa: #ff81a7;
   --cor-secundaria-azul: #071dad;
   --cor-secundaria-amarelo: #e1a500;
-
-  /* Cores para Texto (ajustar conforme o contraste com os fundos) */
-  --cor-texto-para-destaque-em-animacao: #2b2b2b; /* Usar em fundos claros */
-  --cor-texto-claro: #f0f0ec; /* Usar em fundos escuros ou vibrantes */
+  --cor-texto-preto: #2b2b2b;
+  --cor-texto-claro: #f0f0ec;
+  --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body {
   font-family: "Nunito", sans-serif;
   background-color: var(--cor-padrao-offwhite);
+  color: var(--cor-texto-preto);
 }
 
-/*Cabeçalho*/
+/* --- Cabeçalho --- */
 header {
   background-color: var(--cor-padrao-verde-escuro);
   display: flex;
   justify-content: space-between;
-  padding: 18px 38px;
-  /*position: sticky;  junção do fixed + static, deixando ele fixo no topo, mas com fluxo para descer para baixo */
-  /*top: 0; distancia do topo, zero distancia no caso */
-  z-index: 4; /* Hierarquia, posições, quanto maior a hierarquia maior o nivel de importancia (sobreposição) */
-  text-wrap: nowrap;
+  align-items: center;
+  padding: 18px 4%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-.logo {
-  font-size: 36px;
+.logo a {
+  text-decoration: none;
+}
+
+.logo .troquin {
+  font-size: 30px;
   font-weight: 800;
   text-transform: uppercase;
-  color: #f0f0ec;
+  color: var(--cor-padrao-offwhite);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-  & p span img {
-    transform: translateY(2px); /* EIXO X E EIXO Y, EIXO Z */
-    animation: rodar-moeda 2s infinite;
-    /* perspective: 1000px; perpectiva de animação (pesquisar)*/
-  }
+.logo p span img,
+.logo a span img {
+  height: 23px;
+  animation: rodar-moeda 2s infinite linear;
+}
+
+.logo p span img {
+  transform: translateY(5px);
+  animation: rodar-moeda 2s infinite linear;
 }
 
 @keyframes rodar-moeda {
-  0% {
-    transform: rotateY(0deg) translateY(2px);
+  from {
+    transform: rotateY(0deg);
   }
-  50% {
-    transform: rotateY(180deg) translateY(2px);
+  to {
+    transform: rotateY(360deg);
   }
-  100% {
-    transform: rotateY(0deg) translateY(2px);
-  }
-}
-
-nav {
-  display: flex; /*Alinhar os componentes de dentro,de forma centralizada na header*/
-  align-items: center; /*Alinhar os conteúdos ao centro*/
-}
-
-nav a {
-  color: aliceblue;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 700;
 }
 
 nav ul {
-  /* Transforma a lista em um container flexível para alinhar os itens horizontalmente */
   display: flex;
-
-  /* Remove as bolinhas da lista */
   list-style: none;
+  gap: 15px;
 }
 
-/* Estilos para cada item da lista */
-nav ul li {
-  /* Adiciona um espaçamento entre os links */
-  margin: 0 15px; /* Ajuste o valor para o espaço que você quiser */
-
-  text-transform: uppercase; /*Deixa todas as letras em maiusculo*/
+nav a {
+  color: var(--cor-padrao-offwhite);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
-/*Fim da formatação da header*/
 
-main {
-  width: 100vw;
+nav .active a,
+nav a:hover {
+  background-color: var(--cor-padrao-verde-azulado);
+}
+
+/* --- Título da Página --- */
+.titulo-pagina {
+  background: linear-gradient(
+    45deg,
+    var(--cor-secundaria-azul),
+    var(--cor-padrao-verde-azulado)
+  );
+  color: var(--cor-texto-claro);
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+}
+
+.titulo-pagina h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* --- Seção Missão e Visão --- */
+.mvv-container {
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  padding: 0 2rem;
+}
+
+.missao-visao {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.card-mv {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: var(--sombra-suave);
+}
+
+/* Inverte a ordem da imagem e texto para o segundo card */
+.card-mv:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.card-mv img {
+  max-width: 200px;
   height: auto;
 }
 
-.titulo-pagina {
-  margin-top: 10vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.parte-azul-titulo {
-  position: absolute;
-  background-color: var(--cor-secundaria-azul);
-  width: 50vw;
-  border-radius: 20px;
-  height: 204px;
-  color: var(--cor-padrao-offwhite);
-}
-
-.parte-verde-titulo {
-  position: absolute;
-  background-color: var(--cor-padrao-verde-escuro);
-  width: 52vw;
-  border-radius: 20px;
-  height: 204px;
-  transform: rotate(2.266deg);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  top: 2vh;
-  left: 24.5vw;
-}
-
-.parte-verde-titulo p {
-  color: var(--cor-padrao-offwhite);
-  text-transform: uppercase;
-  font-size: 3rem;
-  font-weight: 700;
-  transform: rotate(-2.266deg);
-}
-
-.ponto-azul-titulo {
-  position: absolute;
-  z-index: 3;
-  left: 26vw;
-  top: 2vh;
-}
-
-#dinheiro1 {
-  top: -7vh;
-  left: 30vw;
-}
-
-#dinheiro2 {
-  top: 13vh;
-  left: -30vw;
-}
-
-.missao-e-visao {
-  margin-top: 35vh;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#img1-mvv {
-  width: 200px;
-  position: absolute;
-  left: 43.5vw;
-  top: -16.5vh;
-  z-index: 1;
-}
-
-#img2-mvv {
-  width: 220px;
-  position: absolute;
-  left: 42vw;
-  top: 40vh;
-  z-index: 1;
-}
-
-.card-mvv {
-  background-color: var(--cor-padrao-verde-escuro);
-  color: var(--cor-padrao-offwhite);
-  width: 45vw;
-  height: 35vh;
-  text-align: center;
-  border-radius: 20px;
-  padding: 4vh;
-}
-
-.titulo-mvv {
-  text-transform: uppercase;
+.card-mv-content h2 {
   font-size: 2rem;
-  margin-top: 12vh;
+  color: var(--cor-padrao-verde-escuro);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
-.texto-mvv {
-  font-size: 1.15rem;
-  font-weight: 500;
+.card-mv-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
+/* --- Seção Valores --- */
 .valores {
-  margin-top: 10vh;
+  background-color: var(--cor-padrao-verde-escuro);
+  color: var(--cor-texto-claro);
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-.valor {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 50vh;
+.valores h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
 }
 
-#valor1 {
-  background-color: var(--cor-secundaria-amarelo);
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.nome-valor {
-  position: absolute;
-  z-index: 1;
-  color: var(--cor-padrao-offwhite);
-  font-size: 2rem;
-}
-
-#valor2 {
-  background-color: var(--cor-secundaria-rosa);
-}
-
-#nome-valor1 {
-  top: 22.5vh;
-  left: 50.5vw;
-}
-
-#nome-valor2 {
-  top: 22.5vh;
-  right: 53vw;
-}
-
-#valor3 {
-  background-color: var(--cor-secundaria-cinza-verde);
-}
-
-#nome-valor3 {
-  top: 22.5vh;
-  left: 52vw;
-}
-
-#valor4 {
-  background-color: #098374;
-}
-
-#nome-valor4 {
-  top: 22.5vh;
-  right: 50vw;
-}
-
-#valor5 {
-  background-color: #7b3110;
-}
-
-#nome-valor5 {
-  top: 22.5vh;
-  left: 50.5vw;
-}
-
-.ods {
-  background-color: #00685b;
-  color: var(--cor-padrao-offwhite);
+.valor-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
 }
 
+.valor-card img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.valor-card:hover img {
+  transform: scale(1.1);
+}
+
+.valor-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* --- Seção ODS --- */
+.ods {
+  padding: 4rem 2rem;
+  background-color: #fff;
+}
+.ods-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ods-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--cor-padrao-verde-escuro);
+}
+.ods-content p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
 .imagens-ods {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100vw;
-}
-
-.img-ods {
-  width: 18vw;
-}
-
-.equipe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.img-ods {
+  width: 180px;
+  border-radius: 10px;
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.3s ease;
+}
+.img-ods:hover {
+  transform: translateY(-10px);
 }
 
-.cards {
-  width: 80vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+/* --- Seção Equipe --- */
+.equipe {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.equipe h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.cards-equipe-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card-equipe {
   background-color: var(--cor-padrao-verde-escuro);
   color: var(--cor-padrao-offwhite);
-  text-align: center;
-  width: 22vw;
-  margin-bottom: 10vh;
-  border-radius: 20px;
-  padding: 25px;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-equipe h3 {
-  font-weight: bolder;
+.card-equipe:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-equipe img {
-  width: 15vw;
-  border-radius: 20px;
-  width: 15vw;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid var(--cor-padrao-offwhite);
 }
 
-.card-equipe a {
-  color: #fff;
+.card-equipe h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
 }
 
+.card-equipe p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+.card-equipe .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card-equipe .social-links a {
+  color: var(--cor-padrao-offwhite);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.card-equipe .social-links a:hover {
+  color: var(--cor-secundaria-amarelo);
+}
+
+/* --- Rodapé --- */
 footer {
   position: relative;
   width: 100%;
@@ -431,44 +412,44 @@ footer {
   margin-top: 4%;
   width: 100%;
 }
-
-/* Responsividade para mobile */
+/* --- Responsividade para Mobile --- */
 @media (max-width: 768px) {
-  .footer-main-content {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 4%;
+  }
+  nav ul {
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .titulo-pagina h1 {
+    font-size: 2.2rem;
+  }
+
+  .card-mv,
+  .card-mv:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .valores-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-info {
     flex-direction: column;
     gap: 2rem;
-  }
-
-  .logo-do-footer {
-    top: 10%;
-  }
-
-  .logo-do-footer img {
-    width: 140px;
-  }
-
-  .footer-content {
-    top: 40%;
-  }
-
-  .footer-section h3 {
-    font-size: 1.3rem;
-  }
-
-  .footer-section p {
-    font-size: 1rem;
-  }
-
-  .social-icons {
-    gap: 1.2rem;
-  }
-
-  .social-icons a {
-    font-size: 1.8rem;
-  }
-
-  .direitos {
-    font-size: 0.9rem;
-    padding: 0 1rem;
+    align-items: center;
   }
 }

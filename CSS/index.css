@@ -35,62 +35,56 @@ header {
   background-color: var(--cor-padrao-verde-escuro);
   display: flex;
   justify-content: space-between;
-  padding: 18px 38px;
-  /*position: sticky;  junção do fixed + static, deixando ele fixo no topo, mas com fluxo para descer para baixo */
-  /*top: 0; distancia do topo, zero distancia no caso */
-  z-index: 4; /* Hierarquia, posições, quanto maior a hierarquia maior o nivel de importancia (sobreposição) */
+  align-items: center;
+  padding: 18px 4%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.logo {
-  font-size: 36px;
+.logo .troquin {
+  font-size: 30px;
   font-weight: 800;
   text-transform: uppercase;
-  color: #f0f0ec;
-
-  & p span img {
-    transform: translateY(5px); /* EIXO X E EIXO Y, EIXO Z */
-
-    animation: rodar-moeda 1s infinite;
-    /* perspective: 1000px; perpectiva de animação (pesquisar)*/
-  }
+  color: var(--cor-padrao-offwhite);
+  display: flex;
+  align-items: center;
 }
 
-.troquin {
-  font-size: 30px;
+.logo p span img {
+  transform: translateY(5px);
+  animation: rodar-moeda 2s infinite linear;
 }
 
 @keyframes rodar-moeda {
-  0% {
-    transform: rotateY(180deg) translateY(5px);
+  from {
+    transform: rotateY(0deg) translateY(5px);
+  }
+  to {
+    transform: rotateY(360deg) translateY(5px);
   }
 }
 
-nav {
-  display: flex; /*Alinhar os componentes de dentro,de forma centralizada na header*/
-  align-items: center; /*Alinhar os conteúdos ao centro*/
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+nav .active a,
+nav a:hover {
+  background-color: var(--cor-padrao-verde-azulado);
 }
 
 nav a {
-  color: aliceblue;
+  color: var(--cor-padrao-offwhite);
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
-}
-
-nav ul {
-  /* Transforma a lista em um container flexível para alinhar os itens horizontalmente */
-  display: flex;
-
-  /* Remove as bolinhas da lista */
-  list-style: none;
-}
-
-/* Estilos para cada item da lista */
-nav ul li {
-  /* Adiciona um espaçamento entre os links */
-  margin: 0 15px; /* Ajuste o valor para o espaço que você quiser */
-
-  text-transform: uppercase; /*Deixa todas as letras em maiusculo*/
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 /* Responsividade do header */

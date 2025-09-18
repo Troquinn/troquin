@@ -1,0 +1,429 @@
+/* =================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ================================= */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+:root {
+  /* Cores */
+  --cor-padrao-offwhite: #f0f0ec;
+  --cor-padrao-verde-escuro: #007f70;
+  --cor-padrao-verde-azulado: #00ac98;
+  --cor-secundaria-cinza-verde: #779c91;
+  --cor-secundaria-rosa: #ff81a7;
+  --cor-secundaria-azul: #4056e8;
+  --cor-secundaria-amarelo: #e1a500;
+  --cor-texto-claro: #ffffff;
+  --cor-fundo-secao: #f9f5f5;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: var(--cor-padrao-offwhite);
+  color: #333;
+  background-image: url("../IMAGENS/SECAO.svg"); /* Verifique o caminho! */
+  background-size: cover; /* Faz a imagem cobrir toda a tela, sem distorcer */
+  background-position: center center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Impede que a imagem se repita */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* =================================
+   CABEÇALHO (HEADER)
+   ================================= */
+header {
+  background-color: var(--cor-padrao-verde-escuro);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 4%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo .troquin {
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--cor-padrao-offwhite);
+  display: flex;
+  align-items: center;
+}
+
+.logo p span img {
+  transform: translateY(5px);
+  animation: rodar-moeda 2s infinite linear;
+}
+
+nav .active a,
+nav a:hover {
+  background-color: var(--cor-padrao-verde-azulado);
+}
+
+@keyframes rodar-moeda {
+  from {
+    transform: rotateY(0deg) translateY(5px);
+  }
+  to {
+    transform: rotateY(360deg) translateY(5px);
+  }
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+nav a {
+  color: var(--cor-padrao-offwhite);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+/* =================================
+   BANNER
+   ================================= */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #ff6b9d, #ffb800);
+  margin: 2% 0;
+  padding: 3rem 4%;
+  border-radius: 35px 10px 35px 10px;
+  color: var(--cor-texto-claro);
+}
+
+.banner-text {
+  flex-basis: 60%;
+}
+
+.titulo_banner {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.paragrafo_banner {
+  font-size: 1.5rem;
+}
+
+.img_banner {
+  max-width: 25%;
+  height: auto;
+}
+
+/* =================================
+   SEÇÕES DE CARDS E CONTEÚDO
+   ================================= */
+.beneficios-container,
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 8rem 1rem 4rem 1rem;
+  margin-top: -50px;
+}
+
+.section-wrapper {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.section-title-container {
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+  min-height: 150px;
+}
+
+.section-title-img {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.content-box {
+  background-color: var(--cor-fundo-secao);
+  border-radius: 50px;
+  padding: 4rem 2rem 2rem;
+}
+
+.section-main-title {
+  color: var(--cor-secundaria-azul);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Animação de Flutuação */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-img-1,
+.floating-img-2 {
+  position: absolute;
+  z-index: 5;
+  /* ALTERADO: Duração da animação foi diminuída para ser mais rápida */
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.floating-img-1 {
+  /* Dinheiro */
+  /* ALTERADO: Posição mais distante (mais para cima e para a esquerda) */
+  top: -80px;
+  left: 5%;
+  width: 120px;
+}
+
+.floating-img-2 {
+  /* Carteira */
+  /* ALTERADO: Posição mais distante (mais para baixo e para a direita) */
+  top: 70px;
+  right: 8%;
+  width: 120px;
+  /* ALTERADO: Duração e delay ajustados para a nova velocidade */
+  animation-delay: 0.5s;
+  animation-duration: 3.5s;
+}
+
+/* =================================
+   ESTILO PADRÃO DOS CARDS
+   ================================= */
+.card {
+  flex-basis: 300px;
+  flex-grow: 1;
+  max-width: 380px;
+  min-height: 280px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--cor-texto-claro);
+  position: relative;
+}
+
+.card-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-top: -110px;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Cores dos Cards */
+.card--rosa {
+  background-color: var(--cor-secundaria-rosa);
+}
+.card--amarelo {
+  background-color: var(--cor-secundaria-amarelo);
+}
+.card--azul {
+  background-color: var(--cor-secundaria-azul);
+}
+.card--verde-escuro {
+  background-color: #00685b;
+}
+.card--verde-claro {
+  background-color: #1db584;
+}
+.card--cinza-verde {
+  background-color: var(--cor-secundaria-cinza-verde);
+}
+
+/* =================================
+   RODAPÉ (FOOTER)
+   ================================= */
+footer {
+  position: relative;
+  width: 100%;
+  margin-top: 10%;
+  overflow: hidden;
+}
+
+.fundo {
+  position: relative;
+  width: 100%;
+}
+
+.fundo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-do-footer {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+}
+
+.logo-do-footer img {
+  width: 220px;
+  height: auto;
+  margin-left: -370%;
+  margin-top: 100%;
+}
+
+.footer-content {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  color: white;
+  font-family: "Nunito", sans-serif;
+}
+
+.footer-main-content {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4%;
+  width: 100%;
+  margin-left: 60%;
+}
+
+.footer-section {
+  text-align: center;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.footer-section p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: white;
+}
+
+.contato p {
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffb800;
+  transform: translateY(-3px);
+}
+
+.direitos {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 4%;
+  width: 100%;
+}
+/* =================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ================================= */
+@media (max-width: 992px) {
+  .titulo_banner {
+    font-size: 2rem;
+  }
+  .paragrafo_banner {
+    font-size: 1.2rem;
+  }
+  .img_banner {
+    display: none;
+  }
+
+  .floating-img-1,
+  .floating-img-2 {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  header nav {
+    display: none; /* Requer JS para menu hamburguer */
+  }
+  header {
+    justify-content: center;
+  }
+
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-main-title {
+    font-size: 1.5rem;
+  }
+  .card-container {
+    padding-top: 6rem;
+  }
+
+  .floating-img-1 {
+    left: 2%;
+  }
+  .floating-img-2 {
+    right: 2%;
+  }
+
+  .footer-info-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
