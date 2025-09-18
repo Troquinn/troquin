@@ -1,8 +1,8 @@
 const imagens = [
-    "../IMAGENS/imagens-home/p11.svg",
-    "../IMAGENS/imagens-home/p12.svg",
-    "../IMAGENS/imagens-home/p14.svg",
-    "../IMAGENS/imagens-home/p15.svg"
+    "IMAGENS/imagens-home/p11.svg",
+    "IMAGENS/imagens-home/p12.svg",
+    "IMAGENS/imagens-home/p14.svg",
+    "IMAGENS/imagens-home/p15.svg"
 ];
 
 const imgElemento = document.getElementById("pessoas");
