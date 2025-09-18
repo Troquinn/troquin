@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+:root {
+  --cor-padrao-offwhite: #f0f0ec;
+  --cor-padrao-verde-azulado: #00ac98;
+  --cor-padrao-verde-escuro: #007f70;
+  --cor-secundaria-cinza-verde: #779c91;
+  --cor-secundaria-rosa: #ff81a7;
+  --cor-secundaria-azul: #071dad;
+  --cor-secundaria-amarelo: #e1a500;
+  --cor-texto-preto: #2b2b2b;
+  --cor-texto-claro: #f0f0ec;
+}
+
+html {
+  height: 100%;
+}
+
+.page-body {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cor-padrao-offwhite);
+  background-image: url("../IMAGENS/img_como_investir/fundo-como-investir.svg");
+  background-size: 100% auto;
+  background-position: top center;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 20px;
+}
+
+header {
+  background-color: var(--cor-padrao-verde-escuro);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 38px;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--cor-texto-claro);
+}
+
+.logo p span img {
+  transform: translateY(2px);
+  animation: rodar-moeda 1.5s infinite linear;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: var(--cor-texto-claro);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+  text-transform: uppercase;
+}
+
+/* ESTILOS PARA O LAYOUT (TÍTULO E CARDS BRANCOS)         */
+
+.main-title-container {
+  background-color: var(--cor-secundaria-azul);
+  color: var(--cor-texto-claro);
+  padding: 25px 50px;
+  border-radius: 20px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 5rem;
+  animation: mover 2s infinite ease-in-out; /
+}
+
+.main-title-container h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.main-title-container::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cor-padrao-verde-escuro);
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.info-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.info-card {
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
+  width: 46%;
+  min-width: 320px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  font-size: 2rem;
+  color: var(--cor-padrao-verde-escuro);
+  line-height: 1.5;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.info-card p {
+  margin: 0;
+}
+
+.highlight-yellow {
+  background-color: #fce283;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-weight: 800;
+}
+
+.decor-money-1 {
+  position: absolute;
+  width: 120px;
+  top: -50px;
+  left: -40px;
+  animation: subir-e-descer 2s infinite ease-in-out; 
+}
+
+.decor-money-2 {
+  position: absolute;
+  width: 100px;
+  bottom: -40px;
+  right: -40px;
+  transform: rotate(15deg);
+  animation: subir-e-descer 2s infinite ease-in-out 0.5s;
+}
+
+/* seção animações */
+@keyframes rodar-moeda {
+  from {
+    transform: rotateY(0deg) translateY(2px);
+  }
+  to {
+    transform: rotateY(360deg) translateY(2px);
+  }
+}
+
+/* animação para os ícones */
+@keyframes subir-e-descer {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* animação para o bloco principal */
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.spacer {
+  height: 5900px;
+}
