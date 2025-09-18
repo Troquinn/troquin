@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* Aqui começa o css reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Aqui termina o css reset */
+/* Aqui começa a config do site */
+body{
+    background: linear-gradient(135deg, #1DB584 0%, #FF6B9D 130%);
+    min-height: 250vh;
+    color: #333;
+}
+/* Aqui termina a config do site */
+/* Aqui começa o cabeçalho do site */
+header{
+    width: 100%;
+    height: 10vh;
+    overflow: hidden;   
+}
+.logo{
+    position: relative;
+    margin: 1% 2%;
+    width: 13%;
+    height: 7vh;
+}
+nav{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin-left: 30%;
+    margin-top: -4%;
+}
+nav a{
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    width: 18%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: whitesmoke;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+nav a:hover{
+    background: rgba(255,255,255,0.2);
+}
+/* Aqui termina o cabeçalho */
+/* Aqui começa o banner do site */
+.container{
+    margin: 0 auto;
+    padding: 2rem;
+}
+.banner{
+    background: linear-gradient(135deg, #ff6b9d 0%, #ffb800 100%);
+    border-radius: 30px;
+    padding: 2rem 2rem 0rem 2rem;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+.banner::before{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+}
+.banner::after{
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    bottom: -75px;
+    left: -75px;
+}
+.titleabnner{
+    font-family: "Nunito", sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    margin-left: 5%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 3);
+}
+.paragrafobanner{
+    font-family: "Nunito", sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: whitesmoke;
+    margin-left: 5%;
+    opacity: 0.9;
+}
+.imgbanner{
+    margin-left: 75%;
+    margin-top: -16%;
+}
+/* Aqui termina o banner do site */
+/* Aqui começa as dúvidas */
+.duvidas {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.duvidas > div {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+    margin-top: 3%;
+}
+
+.resposta1 {
+    background-color: #FF81A7;
+}
+
+.resposta2 {
+    background-color: #E1A500;
+}
+
+.resposta3 {
+    background-color: #5A6EF5;
+}
+
+.duvidas img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-top: -150px;
+    margin-bottom: 1rem;
+}
+.resposta2 img{
+    width: 250px;
+    height: 250px;
+}
+.duvidas .pergunta {
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    color: whitesmoke;
+    margin-bottom: 1rem;
+}
+
+.duvidas p {
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: whitesmoke;
+    line-height: 1.4;
+}
+/* Aqui termina as dúvidas */
+/* Aqui começa a calculadora */
+#titlecalculadora {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+#titlecalculadora h1 {
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 6%;
+    margin-left: 6%;
+    width: 90%;
+    color: white;
+}
+
+#calculadora {
+    width: 90%;
+    height: 750px;
+    background: linear-gradient(135deg, #ffb800 0%, #ff6b9d 100%);
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 130px 30px 130px 30px;
+    display: flex; /* Adicionando flexbox */
+    justify-content: space-between; /* Espaço entre as colunas */
+    padding: 2%; /* Adicionando padding interno */
+}
+
+#infos {
+    width: 45%;
+    height: 90%;
+    margin-top: -4%; /* Agora a margin-top funciona */
+    padding: 1%;
+}
+
+#infos label {
+    color: black;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    width: 100%;
+    display: block;
+    margin-top: 8%;
+}
+
+#infos input {
+    font-size: 18px;
+    width: 90%;
+    border: 3px solid rgb(199, 196, 196);
+    border-radius: 15px;
+    height: 60px;
+    margin-top: 1%;
+    padding: 0 10px;
+}
+/* Aqui começa o botão */
+
+.calculate-btn {
+            background: linear-gradient(135deg, #1DB584 0%, #FFB800 100%);
+            color: white;
+            border: none;
+            margin-left: 3%;
+            margin-top: 5%;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 80%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(29, 181, 132, 0.3);
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(29, 181, 132, 0.4);
+        }
+
+/* Aqui começa o botão */
+#resultados {
+    width: 60%;
+    height: 100%;
+    background-color: #1DB584;
+    border-radius: 30px;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#resultados label {
+    color: whitesmoke;
+    background-color: transparent;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+    margin-left: 5%;
+}
+
+#resultados input {
+    font-size: 36px;
+    background-color: transparent;
+    color: whitesmoke;
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    height: 60px;
+    margin-left: 4%;
+    padding: 0 10px;
+}
+.valor-final, .total-investido, .lucro-total, .rentabilidade{
+    background-color: rgba(254, 254, 254, 0.356);
+    height: 120px;
+    border-radius: 20px;    
+}
+/* Aqui termina a calculadora */
+
+/* Aqui começa os resultados */
+#resultados input[readonly] {
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.valor-final, .total-investido, .lucro-total, .rentabilidade {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 120px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2;
+}
+
+.valor-final label, .total-investido label, 
+.lucro-total label, .rentabilidade label {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Melhorar a responsividade */
+@media (max-width: 768px) {
+    #calculadora {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    #infos, #resultados {
+        width: 100%;
+        margin: 0;
+    }
+    
+    #resultados {
+        margin-top: 20px;
+    }
+}
+/* Aqui começa o footer */
+
+footer {
+    position: relative;
+    width: 100%;
+    margin-top: 10%;
+    overflow: hidden;
+}
+
+.fundo {
+    position: relative;
+    width: 100%;
+}
+
+.fundo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo-do-footer {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.logo-do-footer img {
+    width: 180px;
+    height: auto;
+    margin-left: -370%;
+    margin-top: 50%;
+}
+
+.footer-content {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    color: white;
+    font-family: "Nunito", sans-serif;
+}
+
+.footer-main-content {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4%;
+    width: 100%;
+    margin-left: 60%;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
+.footer-section p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: white;
+}
+
+.contato p {
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #FFB800;
+    transform: translateY(-3px);
+}
+
+.direitos {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 4%;
+    width: 100%;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+    .footer-main-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .logo-do-footer {
+        top: 10%;
+    }
+    
+    .logo-do-footer img {
+        width: 140px;
+    }
+    
+    .footer-content {
+        top: 40%;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-section p {
+        font-size: 1rem;
+    }
+    
+    .social-icons {
+        gap: 1.2rem;
+    }
+    
+    .social-icons a {
+        font-size: 1.8rem;
+    }
+    
+    .direitos {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Aqui termina o footer */
